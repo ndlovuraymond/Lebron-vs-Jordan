@@ -1,0 +1,45 @@
+body {
+    background-image: url("../assets/Lebron vs Jordan.webp");
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.dash-graph {
+    display: inline;
+}
+
+#stats-div {
+    display: flex;
+    flex-direction: row;
+}
+
+.Select--single>.Select-control .Select-value,
+.Select-placeholder {
+    background-color: rgb(255, 255, 255, 0.40);
+    color: black
+}
+
+#sub-heading {
+    display: inline-flex;
+    margin-left: 20px;
+    justify-content: start;
+    flex-direction: column;
+}
+
+#main-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#lebron-stats-total,
+#jordan-stats-total {
+    display: inline-flex;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid rgb(0, 0, 0, 0.40);
+    border-radius: 10px;
+}
