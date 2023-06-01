@@ -21,6 +21,10 @@ body {
     color: black
 }
 
+#total-dropdown {
+    margin-bottom: 10px
+}
+
 #sub-heading {
     display: inline-flex;
     margin-left: 20px;
