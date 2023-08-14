@@ -10,7 +10,10 @@ body {
     display: inline;
 }
 
-#stats-div {
+#stats-div,
+#stats-div-avg,
+#stats-div-eff,
+#stats-div-cumulative {
     display: flex;
     flex-direction: row;
 }
@@ -21,11 +24,19 @@ body {
     color: black
 }
 
-#total-dropdown {
+#total-dropdown,
+#averages-dropdown,
+#efficiency-dropdown,
+#season-dropdown,
+#cumulative-dropdown {
     margin-bottom: 10px
 }
 
-#sub-heading {
+
+#sub-heading,
+#sub-heading-avg,
+#sub-heading-eff,
+#sub-heading-cumulative {
     display: inline-flex;
     margin-left: 20px;
     justify-content: start;
@@ -39,11 +50,18 @@ body {
 }
 
 #lebron-stats-total,
-#jordan-stats-total {
+#jordan-stats-total,
+#lebron-stats-averages,
+#jordan-stats-averages,
+#lebron-stats-efficiency,
+#jordan-stats-efficiency,
+#lebron-stats-cumulative,
+#jordan-stats-cumulative {
     display: inline-flex;
     width: 50%;
     align-items: center;
     justify-content: center;
     border: 5px solid rgb(0, 0, 0, 0.40);
     border-radius: 10px;
+    margin-bottom: 15px
 }
