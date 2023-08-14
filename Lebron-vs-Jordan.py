@@ -50,10 +50,10 @@ lebron_regular_season["Free Throws Missed"] = lebron_regular_season["fta"] - leb
 jordan_regular_season["Free Throws Made"] = jordan_regular_season["ft"]
 jordan_regular_season["Free Throws Missed"] = jordan_regular_season["fta"] - jordan_regular_season["ft"]
     
-lebron_regular_season["Three Made"] = lebron_regular_season["three"]
-lebron_regular_season["Three Missed"] = lebron_regular_season["threeatt"] - lebron_regular_season["three"]
-jordan_regular_season["Three Made"] = jordan_regular_season["three"]
-jordan_regular_season["Three Missed"] = jordan_regular_season["threeatt"] - jordan_regular_season["three"]
+lebron_regular_season["Threes Made"] = lebron_regular_season["three"]
+lebron_regular_season["Threes Missed"] = lebron_regular_season["threeatt"] - lebron_regular_season["three"]
+jordan_regular_season["Threes Made"] = jordan_regular_season["three"]
+jordan_regular_season["Threes Missed"] = jordan_regular_season["threeatt"] - jordan_regular_season["three"]
     
 lebron_playoffs["Field Goals Made"] = lebron_playoffs["fg"]
 lebron_playoffs["Field Goals Missed"] = lebron_playoffs["fga"] - lebron_playoffs["fg"]
@@ -65,10 +65,10 @@ lebron_playoffs["Free Throws Missed"] = lebron_playoffs["fta"] - lebron_playoffs
 jordan_playoffs["Free Throws Made"] = jordan_playoffs["ft"]
 jordan_playoffs["Free Throws Missed"] = jordan_playoffs["fta"] - jordan_playoffs["ft"]
     
-lebron_playoffs["Three Made"] = lebron_playoffs["three"]
-lebron_playoffs["Three Missed"] = lebron_playoffs["threeatt"] - lebron_playoffs["three"]
-jordan_playoffs["Three Made"] = jordan_playoffs["three"]
-jordan_playoffs["Three Missed"] = jordan_playoffs["threeatt"] - jordan_playoffs["three"]
+lebron_playoffs["Threes Made"] = lebron_playoffs["three"]
+lebron_playoffs["Threes Missed"] = lebron_playoffs["threeatt"] - lebron_playoffs["three"]
+jordan_playoffs["Threes Made"] = jordan_playoffs["three"]
+jordan_playoffs["Threes Missed"] = jordan_playoffs["threeatt"] - jordan_playoffs["three"]
     
 lebron_finals["Field Goals Made"] = lebron_finals["fg"]
 lebron_finals["Field Goals Missed"] = lebron_finals["fga"] - lebron_finals["fg"]
@@ -80,10 +80,10 @@ lebron_finals["Free Throws Missed"] = lebron_finals["fta"] - lebron_finals["ft"]
 jordan_finals["Free Throws Made"] = jordan_finals["ft"]
 jordan_finals["Free Throws Missed"] = jordan_finals["fta"] - jordan_finals["ft"]
     
-lebron_finals["Three Made"] = lebron_finals["three"]
-lebron_finals["Three Missed"] = lebron_finals["threeatt"] - lebron_finals["three"]
-jordan_finals["Three Made"] = jordan_finals["three"]
-jordan_finals["Three Missed"] = jordan_finals["threeatt"] - jordan_finals["three"]
+lebron_finals["Threes Made"] = lebron_finals["three"]
+lebron_finals["Threes Missed"] = lebron_finals["threeatt"] - lebron_finals["three"]
+jordan_finals["Threes Made"] = jordan_finals["three"]
+jordan_finals["Threes Missed"] = jordan_finals["threeatt"] - jordan_finals["three"]
 
 #creating dataframes for cumulative shooting
 lebron_shooting_totals_regular = lebron_regular_season[["fg","fga","three",
@@ -318,7 +318,7 @@ def Update_Efficiency(season,efficiency):
             return lbj_figure,jordan_figure
         
         elif efficiency == "Three Pointers":
-            lbj_efficiency = lebron_regular_season[["Three Made","Three Missed"]].mean().to_frame()
+            lbj_efficiency = lebron_regular_season[["Threes Made","Threes Missed"]].mean().to_frame()
             lbj_efficiency.rename(columns={lbj_efficiency.columns[0]:"Total"},inplace=True)
             lbj_figure=px.pie(lbj_efficiency,values="Total",names=lbj_efficiency.index,
                               title="Lebron's Three Point Efficiency",hole=.4,
@@ -326,7 +326,7 @@ def Update_Efficiency(season,efficiency):
                     paper_bgcolor="rgb(0,0,0,0.40)",plot_bgcolor="rgb(0,0,0,0.40)",
                 font={'color':'white'}).update_traces(sort=False)
 
-            jordan_efficiency = jordan_regular_season[["Three Made","Three Missed"]].mean().to_frame()
+            jordan_efficiency = jordan_regular_season[["Threes Made","Threes Missed"]].mean().to_frame()
             jordan_efficiency.rename(columns={jordan_efficiency.columns[0]:"Total"},inplace=True)
             jordan_figure=px.pie(jordan_efficiency,values="Total",names=jordan_efficiency.index,
                               title="Jordan's Three Point Efficiency",hole=.4,
@@ -375,7 +375,7 @@ def Update_Efficiency(season,efficiency):
             return lbj_figure,jordan_figure
         
         elif efficiency == "Three Pointers":
-            lbj_efficiency = lebron_playoffs[["Three Made","Three Missed"]].mean().to_frame()
+            lbj_efficiency = lebron_playoffs[["Threes Made","Threes Missed"]].mean().to_frame()
             lbj_efficiency.rename(columns={lbj_efficiency.columns[0]:"Total"},inplace=True)
             lbj_figure=px.pie(lbj_efficiency,values="Total",names=lbj_efficiency.index,
                               title="Lebron's Three Point Efficiency",hole=.4,
@@ -383,7 +383,7 @@ def Update_Efficiency(season,efficiency):
                     paper_bgcolor="rgb(0,0,0,0.40)",plot_bgcolor="rgb(0,0,0,0.40)",
                 font={'color':'white'}).update_traces(sort=False)
 
-            jordan_efficiency = jordan_playoffs[["Three Made","Three Missed"]].mean().to_frame()
+            jordan_efficiency = jordan_playoffs[["Threes Made","Threes Missed"]].mean().to_frame()
             jordan_efficiency.rename(columns={jordan_efficiency.columns[0]:"Total"},inplace=True)
             jordan_figure=px.pie(jordan_efficiency,values="Total",names=jordan_efficiency.index,
                               title="Jordan's Three Point Efficiency",hole=.4,
@@ -432,7 +432,7 @@ def Update_Efficiency(season,efficiency):
             return lbj_figure,jordan_figure
         
         elif efficiency == "Three Pointers":
-            lbj_efficiency = lebron_finals[["Three Made","Three Missed"]].mean().to_frame()
+            lbj_efficiency = lebron_finals[["Threes Made","Threes Missed"]].mean().to_frame()
             lbj_efficiency.rename(columns={lbj_efficiency.columns[0]:"Total"},inplace=True)
             lbj_figure=px.pie(lbj_efficiency,values="Total",names=lbj_efficiency.index,
                               title="Lebron's Three Point Efficiency",hole=.4,
@@ -440,7 +440,7 @@ def Update_Efficiency(season,efficiency):
                     paper_bgcolor="rgb(0,0,0,0.40)",plot_bgcolor="rgb(0,0,0,0.40)",
                 font={'color':'white'}).update_traces(sort=False)
 
-            jordan_efficiency = jordan_finals[["Three Made","Three Missed"]].mean().to_frame()
+            jordan_efficiency = jordan_finals[["Threes Made","Threes Missed"]].mean().to_frame()
             jordan_efficiency.rename(columns={jordan_efficiency.columns[0]:"Total"},inplace=True)
             jordan_figure=px.pie(jordan_efficiency,values="Total",names=jordan_efficiency.index,
                               title="Jordan's Three Point Efficiency",hole=.4,
